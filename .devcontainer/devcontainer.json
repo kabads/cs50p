@@ -8,10 +8,10 @@
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile"
 	},
-	"mounts": [
-		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/code/terrain-generator/maps,target=/home/vscode/maps,type=bind",
-	],
+	// "mounts": [
+	// 	"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+	// 	"source=${localEnv:HOME}/code/terrain-generator/maps,target=/home/vscode/maps,type=bind",
+	// ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
