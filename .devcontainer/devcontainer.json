@@ -12,6 +12,11 @@
 	// 	"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
 	// 	"source=${localEnv:HOME}/code/terrain-generator/maps,target=/home/vscode/maps,type=bind",
 	// ],
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/adam/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig,target=/home/adam/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig.personal,target=/home/adam/.gitconfig.personal,type=bind,consistency=cached"
+	]
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
