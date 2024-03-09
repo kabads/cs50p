@@ -11,18 +11,27 @@ def check_plate_length(plate):
 
 def has_alphabetic_after_digits(text):
     pattern = r'\[a-zA-Z]+d+'
-    # print(f"has alphabetic {bool(re.search(pattern, text))}")
-    return not bool(re.search(pattern, text))
+    # print(f"has alphabetic after digits {bool(re.search(pattern, text))}")
+    return bool(re.search(pattern, text))
+
 
 def first_digit_check(text):
-    pattern = r'^0\d*'
+    pattern = r'0\d'
     # print(f"first digit check {bool(re.match(pattern, text))}")
-    return bool(re.match(pattern, text))
+    return bool(re.search(pattern, text))
+
+
+def check_digit_char_digit(text):
+    pattern = r'\d[a-zA-Z]\d'
+    # print(f"check_digit_char_digit {not bool(re.match(pattern, text))}")
+    return not bool(re.search(pattern, text))
 
 
 def check_digits(plate):
     is_valid = False
-    if has_alphabetic_after_digits(plate) and first_digit_check(plate):
+    if has_alphabetic_after_digits(plate) == False \
+        and first_digit_check(plate) == False \
+            and check_digit_char_digit(plate) == True:
         is_valid = True
     return is_valid
 
@@ -31,14 +40,30 @@ def punctuation(text):
     # print(f"punctuation {not bool(re.search(pattern, text))}")
     return not bool(re.search(pattern, text))
 
+def start_two_letters(plate):
+    if plate[0:2].isalpha():
+        return True
+    else:
+        return False
+
 def is_valid(plate):
     is_valid = True
+    if not start_two_letters(plate):
+        is_valid = False
+        # print("Failed start two letters")
+        return is_valid
     if not check_plate_length(plate):
         is_valid = False
+        # print("Failed check_plate_lenght")
+        return is_valid
     if not check_digits(plate) :
         is_valid = False
+        # print("Failed check digits")
+        return is_valid
     if not punctuation(plate):
         is_valid = False
+        # print("Failed punctuation")
+        return is_valid
     return is_valid
 
 
