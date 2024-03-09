@@ -3,6 +3,7 @@ def getTime():
 
 
 def main():
+    print(myvar)
     inputTime = getTime()
     time = convert(inputTime)
     if time >= 7 and time <= 8:
@@ -19,3 +20,5 @@ def convert(time):
 
 if __name__ == '__main__':
     main()
+
+
