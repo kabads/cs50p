@@ -28,7 +28,7 @@ def check_digit_char_digit(text):
 
 
 def check_digits(plate):
-    return nothas_alphabetic_after_digits(plate) \
+    return not has_alphabetic_after_digits(plate) \
         and not first_digit_check(plate) \
             and check_digit_char_digit(plate)
 
