@@ -38,11 +38,10 @@ def punctuation(text):
     # print(f"punctuation {not bool(re.search(pattern, text))}")
     return not bool(re.search(pattern, text))
 
+
 def start_two_letters(plate):
-    if plate[0:2].isalpha():
-        return True
-    else:
-        return False
+    return plate[0:2].isalpha()
+
 
 def is_valid(plate):
     is_valid = True
