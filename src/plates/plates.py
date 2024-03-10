@@ -28,12 +28,10 @@ def check_digit_char_digit(text):
 
 
 def check_digits(plate):
-    is_valid = False
-    if has_alphabetic_after_digits(plate) == False \
-        and first_digit_check(plate) == False \
-            and check_digit_char_digit(plate) == True:
-        is_valid = True
-    return is_valid
+    return nothas_alphabetic_after_digits(plate) \
+        and not first_digit_check(plate) \
+            and check_digit_char_digit(plate)
+
 
 def punctuation(text):
     pattern = r'\W'
