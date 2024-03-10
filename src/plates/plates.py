@@ -4,10 +4,7 @@ def check_plate_length(plate):
     if len(plate) < 2 or len(plate) >6:
         # print(f"len plate: {len(plate)}")
         return False
-    else:
-        # print(f"len plate: {len(plate)}")
-        return True
-
+    return True
 
 def has_alphabetic_after_digits(text):
     pattern = r'\[a-zA-Z]+d+'
