@@ -7,7 +7,7 @@ def check_plate_length(plate):
     return True
 
 def has_alphabetic_after_digits(text):
-    pattern = r'\[a-zA-Z]+d+'
+    pattern = r'\d+[a-zA-Z]+'
     # print(f"has alphabetic after digits {bool(re.search(pattern, text))}")
     return bool(re.search(pattern, text))
 
@@ -21,6 +21,8 @@ def first_digit_check(text):
 def check_digit_char_digit(text):
     pattern = r'\d[a-zA-Z]\d'
     # print(f"check_digit_char_digit {not bool(re.match(pattern, text))}")
+    if text[-1] == '0':
+        return True
     return not bool(re.search(pattern, text))
 
 
