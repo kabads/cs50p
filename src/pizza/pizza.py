@@ -1,5 +1,6 @@
 import sys
-# from tabulate import tabulate
+import csv
+from tabulate import tabulate
 
 def check_file(args):
     if len(args) < 2:
@@ -15,21 +16,15 @@ def check_file(args):
 
 
 def open_file(filename):
-    count = 0
     try:
         with open(filename) as f:
-            lines = f.readlines()
-        for line in lines:
-            # print(f"line: {line}")
-            if not (line.lstrip().startswith("#") or line.strip() == ""):
-                count += 1
-            # print(f"count: {count}")
-        return count
+            lines = csv.DictReader(f)
+            print(tabulate(lines, headers="keys", tablefmt="grid"))
     except:
         print('File does not exist')
         sys.exit(1)
-
-
+        
+        
 def main():
     check_file(sys.argv)
     print(open_file(sys.argv[1]))
