@@ -14,6 +14,9 @@ def check_file(args):
     if extension not in extensions:
         print("Invalid input")
         sys.exit(1)
+    if args[1].split('.')[-1] != args[2].split('.')[-1]:
+        print("Input and output have different extensions")
+        sys.exit(1)
 
 
 
