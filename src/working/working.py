@@ -19,46 +19,48 @@ def convert(s):
     
     matches = pattern.findall(s) 
     for match in matches:
-        print(f"From '{match[0]}' to '{match[1]}'")
+        start_time = match[0].replace(" ", "")
+        end_time = match[1].replace(" ", "")
+        print(f"From '{start_time}' to '{end_time}'")
         # Do we have a dobule digit? 
-
-
-        if len(match[0]) == 2:
+        # Find a space in the match and remove it
+ 
+        if len(start_time) == 2:
             # Is it AM?
-            if match[0][-1] == "A":
-                final_string = final_string + "0" + match[0][0] + ":00"
+            if start_time[-1] == "A":
+                final_string = final_string + "0" + start_time[0] + ":00"
             # Is it PM?
-            elif match[0][-1] == "P":
-                final_string = final_string + match[0][0:2] + ":00"
-        elif len(match[0]) == 3:
+            elif start_time[-1] == "P":
+                final_string = final_string + start_time[0:2] + ":00"
+        elif len(start_time) == 3:
             # Is it AM?
 
-            if match[0][-1] == "A":
-                if match[0][:-1] == "12":
+            if start_time[-1] == "A":
+                if start_time[:-1] == "12":
                     final_string = final_string + "00:00"
                 else:
-                    final_string = final_string + match[0][:-1] + ":00"
+                    final_string = final_string + start_time[:-1] + ":00"
             # Is it PM?
-            elif match[0][-1] == "P":
-                final_string = match[0][:-1] + ":00"
+            elif start_time[-1] == "P":
+                final_string = start_time[:-1] + ":00"
 
         final_string = final_string + " to "
         # Do we have a dobule digit?
-        if len(match[1]) == 2:
+        if len(end_time) == 2:
             # Is it AM?
-            if match[1][-1] == "A":
-                final_string = final_string + "0" + match[1][0] + ":00"
+            if end_time[-1] == "A":
+                final_string = final_string + "0" + end_time[0] + ":00"
             # Is it PM?
-            elif match[1][-1] == "P":
-                time = str(int(match[1][:-1])+12)
+            elif end_time[-1] == "P":
+                time = str(int(end_time[:-1])+12)
                 final_string = final_string  + time  + ":00"
-        elif len(match[1]) == 3:
+        elif len(end_time) == 3:
             # Is it AM?
-            if match[1][-1] == "A":
-                final_string = final_string + match[1][0] + ":00"
+            if end_time[-1] == "A":
+                final_string = final_string + end_time[0] + ":00"
             # Is it PM?
-            elif match[1][-1] == "P":
-                time = str(int(match[1][:-1])+12)
+            elif end_time[-1] == "P":
+                time = str(int(end_time[:-1])+12)
                 final_string = final_string + "1" + time  + ":00"
         return final_string
 
