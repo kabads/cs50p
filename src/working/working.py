@@ -4,11 +4,15 @@ import sys
 
 def main():
     print(convert(input("Hours: ")))
-    # print(convert("12:00 AM to 05:00 PM"))
-    # print(convert("9 AM to 5 PM"))
-    # print(convert("12:61 AM to 5 PM"))
+
+
 
 def process_time(match, pattern):
+    # A regex pattern to find a character next to a digit
+    pattern_digt_text = re.compile(r'(\d)([A|P])')
+    validate_pattern_digit_text = pattern_digt_text.search(match)
+    if validate_pattern_digit_text != None:
+        raise ValueError()
     final_time = ""
     data = pattern.search(match)
     matches = list(data.groups())
