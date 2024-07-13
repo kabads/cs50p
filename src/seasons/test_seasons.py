@@ -1,7 +1,7 @@
 from unittest.mock import patch
 from seasons import get_birthdate, get_age_in_days, convert_minutes_to_word_minutes
 from datetime import date
-
+import pytest
 
 def test_get_birthdate():
     assert get_birthdate("2020-01-01") == date(2020, 1, 1)
@@ -9,6 +9,9 @@ def test_get_birthdate():
     assert get_birthdate("2005-06-15") == date(2005, 6, 15)
     assert get_birthdate("1980-11-25") == date(1980, 11, 25)
     assert get_birthdate("1975-02-28") == date(1975, 2, 28)
+    with patch('sys.exit') as mock_exit:
+        get_birthdate("1st Strange 2020")
+        mock_exit.assert_called_once()
 
 
 def test_get_age_in_days():
