@@ -45,3 +45,9 @@ jobs:
         pytest --cov=.
         cd $GITHUB_WORKSPACE/src/test_plates
         pytest --cov=.
+        cd $GITHUB_WORKSPACE/src/test_twttr
+        pytest --cov=.
+        cd $GITHUB_WORKSPACE/src/um
+        pytest --cov=.
+        cd $GITHUB_WORKSPACE/src/working
+        pytest --cov=.
