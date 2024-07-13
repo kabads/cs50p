@@ -7,7 +7,7 @@ on:
     paths:
       - 'src/**/*'
   workflow_dispatch:
-    
+
 jobs:
   build:
 
@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pytest-cov inflect
+        pip install pytest pytest-cov inflect validators
 
     - name: Run pytest
       run: |
