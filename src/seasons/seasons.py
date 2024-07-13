@@ -21,10 +21,8 @@ def convert_minutes_to_word_minutes(minutes):
 
 def main():
     days = get_age_in_days(get_birthdate(input("Date of Birth: ")))
-    hours = days * 24
-    minutes = hours * 60
-    words = convert_minutes_to_word_minutes(minutes)
-    print(words.capitalize() + " minutes")
+    minutes = days * 24 * 60
+    print(convert_minutes_to_word_minutes(minutes) + " minutes")
 
 
 if __name__ == "__main__":
