@@ -36,3 +36,5 @@ jobs:
         pytest --cov=.
         cd $GITHUB_WORKSPACE/src/numb3rs
         pytest --cov=.
+        cd $GITHUB_WORKSPACE/src/response
+        pytest --cov=.
