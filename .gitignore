@@ -7,3 +7,7 @@ src/pizza.py
 src/shirt/shirt.png
 **/*.pyc
 **/__pycache__/
+**/venv
+**/venv/**
+**/venv-old/**
+
