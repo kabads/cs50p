@@ -30,5 +30,7 @@ jobs:
 
     - name: Run pytest with coverage
       run: |
-        cd src/seasons
+        cd $GITHUB_WORKSPACE/src/seasons
+        pytest --cov=.
+        cd $GITHUB_WORKSPACE/src/numb3rs
         pytest --cov=.
