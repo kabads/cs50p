@@ -27,4 +27,4 @@ def test_get_age_in_days():
 def test_convert_minutes_to_word_minutes():
     assert convert_minutes_to_word_minutes(1) == "One"
     assert convert_minutes_to_word_minutes(10) == "Ten"
-    assert convert_minutes_to_word_minutes(525600) == "Five hundred and twenty-five thousand, six hundred"
+    assert convert_minutes_to_word_minutes(525600) == "Five hundred twenty-five thousand, six hundred"

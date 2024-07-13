@@ -15,7 +15,7 @@ def get_age_in_days(birthdate):
 
 
 def convert_minutes_to_word_minutes(minutes):
-    return p.number_to_words(minutes).capitalize()
+    return p.number_to_words(minutes, andword="").capitalize()
 
 
 def main():
