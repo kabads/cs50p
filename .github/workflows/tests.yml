@@ -33,21 +33,5 @@ jobs:
 
     - name: Run pytest with coverage
       run: |
-        cd $GITHUB_WORKSPACE/src/seasons
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/numb3rs
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/response
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/test_bank
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/test_fuel
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/test_plates
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/test_twttr
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/um
-        pytest --cov=.
-        cd $GITHUB_WORKSPACE/src/working
+        cd $GITHUB_WORKSPACE
         pytest --cov=.
