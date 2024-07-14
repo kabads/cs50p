@@ -10,4 +10,4 @@ src/shirt/shirt.png
 **/venv
 **/venv/**
 **/venv-old/**
-
+.coverage
