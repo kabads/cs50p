@@ -7,7 +7,7 @@ class Jar:
             raise ValueError("Capacity must be positive")
 
     def __str__(self):
-        print ("🍪" * self.size)
+        return ("🍪" * self._size)
 
     def deposit(self, n):
         if self._size + n > self._capacity:
