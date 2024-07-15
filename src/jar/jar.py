@@ -2,6 +2,7 @@ class Jar:
     def __init__(self, capacity=12):
         if capacity > 0:
             self._capacity = capacity
+            self._size = 0
         else:
             raise ValueError("Capacity must be positive")
 
@@ -9,7 +10,7 @@ class Jar:
         print ("🍪" * self.size)
 
     def deposit(self, n):
-        if n > self.capacity:
+        if self._size + n > self._capacity:
             raise ValueError("Jar is full")
         else:
             self.size += n
@@ -33,5 +34,6 @@ class Jar:
         return self._size
     
     @size.setter
-    def set_size(self, size):
-        self._size = size   
+    def size(self, n):
+        if 0 <= n <= self._capacity:
+            self._size = n
